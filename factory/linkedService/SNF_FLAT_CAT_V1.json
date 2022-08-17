@@ -1,16 +1,23 @@
 {
 	"name": "SNF_FLAT_CAT_V1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "Snowflake",
 		"typeProperties": {
 			"connectionString": "jdbc:snowflake://aigiedr.east-us-2.azure.snowflakecomputing.com/?user=SVC.DS_POC&db=AIGI_DB_POC_DS&warehouse=AIGI_WH_POC_DS&role=AIGI_DB_POC_DS",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGRDlEQzVDLUY4QkEtNEY0NC1BNkQ3LUYzRDJGODE0NzVEQV85ZDRiMWNlZC1mOTRhLTQ4MTctODNhZS04YWEyNTkwM2FkMjYiDQp9"
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AKV_SNF_FLAT_CAT_SERVICE",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SNF-FLAT-CAT-PASS"
+			}
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
