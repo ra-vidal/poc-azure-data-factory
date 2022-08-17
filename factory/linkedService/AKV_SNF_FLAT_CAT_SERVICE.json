@@ -1,0 +1,10 @@
+{
+	"name": "AKV_SNF_FLAT_CAT_SERVICE",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://AKV-POC-INTEGRATION.vault.azure.net/"
+		}
+	}
+}
