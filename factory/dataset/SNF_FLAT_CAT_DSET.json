@@ -70,7 +70,7 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "FLAT_CAT",
+			"schema": "POC_SHARED",
 			"table": "CAT_INFO"
 		}
 	}
