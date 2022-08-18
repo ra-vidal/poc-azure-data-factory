@@ -4,14 +4,14 @@
 		"annotations": [],
 		"type": "Snowflake",
 		"typeProperties": {
-			"connectionString": "jdbc:snowflake://aigiedr.east-us-2.azure.snowflakecomputing.com/?user=SVC.DS_POC&db=AIGI_DB_POC_DS&warehouse=AIGI_WH_POC_DS&role=AIGI_DB_POC_DS",
+			"connectionString": "jdbc:snowflake://dj95111.east-us-2.azure.snowflakecomputing.com/?user=POC.SHARED_USER&db=POC_SHARED_DB&warehouse=COMPUTE_WH&role=POC-SHARED",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "AKV_SNF_FLAT_CAT_SERVICE",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "SNF-FLAT-CAT-PASS"
+				"secretName": "POC-SNF-FLAT-CAT-PASS"
 			}
 		},
 		"connectVia": {
