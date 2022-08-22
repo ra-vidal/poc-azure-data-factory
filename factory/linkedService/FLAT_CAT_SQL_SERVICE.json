@@ -1,0 +1,22 @@
+{
+	"name": "FLAT_CAT_SQL_SERVICE",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=AIGI-IWVSQLS003\\I_TPACLAIMS_SQL;Initial Catalog=TPA_CLAIMS;User ID=svc.qaautomation",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AKV_SNF_FLAT_CAT_SERVICE",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "POC-SNF-FLAT-CAT-PASS"
+			}
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
