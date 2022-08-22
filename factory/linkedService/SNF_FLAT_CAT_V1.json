@@ -1,6 +1,7 @@
 {
 	"name": "SNF_FLAT_CAT_V1",
 	"properties": {
+		"description": "This is a POC Flat CAT data source",
 		"annotations": [],
 		"type": "Snowflake",
 		"typeProperties": {
