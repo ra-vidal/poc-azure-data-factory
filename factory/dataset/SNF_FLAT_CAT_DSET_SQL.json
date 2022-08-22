@@ -1,0 +1,12 @@
+{
+	"name": "SNF_FLAT_CAT_DSET_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FLAT_CAT_SQL_SERVICE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}

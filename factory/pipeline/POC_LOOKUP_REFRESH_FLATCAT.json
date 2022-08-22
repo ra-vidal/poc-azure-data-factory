@@ -1,6 +1,133 @@
 {
 	"name": "POC_LOOKUP_REFRESH_FLATCAT",
 	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SnowflakeSource",
+						"exportSettings": {
+							"type": "SnowflakeExportCopyCommand"
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EST_RLS_DT"
+								},
+								"sink": {
+									"name": "EST_RLS_DT"
+								}
+							},
+							{
+								"source": {
+									"name": "ICAT"
+								},
+								"sink": {
+									"name": "ICAT"
+								}
+							},
+							{
+								"source": {
+									"name": "ST"
+								},
+								"sink": {
+									"name": "ST"
+								}
+							},
+							{
+								"source": {
+									"name": "EST_INS_PMT"
+								},
+								"sink": {
+									"name": "EST_INS_PMT"
+								}
+							},
+							{
+								"source": {
+									"name": "CATDTSTART"
+								},
+								"sink": {
+									"name": "CATDTSTART"
+								}
+							},
+							{
+								"source": {
+									"name": "CATDTEND"
+								},
+								"sink": {
+									"name": "CATDTEND"
+								}
+							},
+							{
+								"source": {
+									"name": "CATNAME"
+								},
+								"sink": {
+									"name": "CATNAME"
+								}
+							},
+							{
+								"source": {
+									"name": "CATNUM"
+								},
+								"sink": {
+									"name": "CATNUM"
+								}
+							},
+							{
+								"source": {
+									"name": "CATPERILS"
+								},
+								"sink": {
+									"name": "CATPERILS"
+								}
+							},
+							{
+								"source": {
+									"name": "ID"
+								},
+								"sink": {
+									"name": "ID"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SNF_FLAT_CAT_DSET",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SNF_FLAT_CAT_DSET_SQL",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"annotations": []
 	}
 }
